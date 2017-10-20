@@ -21,7 +21,10 @@ public class CalculatorTest {
 	    Assert.assertEquals(3+6, Calculator.add("3,6"));
 	}
 	
-	
+	@Test
+    public final void whenAnyNumberOfNumbersIsUsedThenReturnValuesAreTheirSums() {
+        Assert.assertEquals(3+6+15+18+46+33, Calculator.add("3,6,15,18,46,33"));
+    }
 
 	
 }
