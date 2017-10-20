@@ -3,16 +3,16 @@ package org.emids;
 public class Calculator {
 
 	public static int add(String numbers) {
-		String[] numbersArray = numbers.split(",");
-		if (numbersArray.length > 2) {
-			throw new RuntimeException("Up to 2 numbers separated by comma (,) are allowed");
-		} else {
-			 for (String number : numbersArray) {
-		            if (!number.isEmpty()) {
-		                Integer.parseInt(number);
-		            }
-		        }
-		    }
-		    return 0; // Added return
-		}
+		int returnValue = 0;
+	    String[] numbersArray = numbers.split(",");
+	    if (numbersArray.length > 2) {
+	        throw new RuntimeException("Up to 2 numbers separated by comma (,) are allowed");
+	    }
+	    for (String number : numbersArray) {
+	        if (!number.trim().isEmpty()) { // After refactoring
+	            returnValue += Integer.parseInt(number);
+	        }
+	    }
+	    return returnValue;
+	}
 }
